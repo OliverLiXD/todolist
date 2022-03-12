@@ -1,0 +1,35 @@
+.App {
+  width: 100rem;
+  padding: 10rem 5rem;
+  text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+body {
+  margin: auto;
+  width: 100rem;
+}
+ol, ul {
+  list-style: none;
+}
+h2 {
+  padding: 5rem 0 10rem 0;
+  color: rgb(50, 50, 50);
+}
+@font-face {
+  font-family: 'iconfont';  /* Project id 2806323 */
+  src: url('//at.alicdn.com/t/font_2806323_o78guzvx7t.woff2?t=1647089400826') format('woff2'),
+       url('//at.alicdn.com/t/font_2806323_o78guzvx7t.woff?t=1647089400826') format('woff'),
+       url('//at.alicdn.com/t/font_2806323_o78guzvx7t.ttf?t=1647089400826') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,49 @@
+.showlist {
+  width: 80rem;
+  padding: 10rem 0 0 0;
+  margin: 0 auto;
+  .unfinish, .finished {
+    width: 100%;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border: 1px solid transparent;
+    background-color: #fff;
+    box-shadow: 0 2px 8px 1px rgb(64 60 67 / 24%);
+    border-color: rgba(223,225,229,0);
+    border-radius: 3rem;
+    padding: 2rem;
+  }
+  .finished {
+    margin-top: 10rem;
+  }
+  .todoitem {
+    display: flex;
+    align-items: center;
+    color: rgb(50, 50, 50);
+    padding: 3.5rem 0;
+    height: 6rem;
+    line-height: 6rem;
+    justify-content: left;
+    .discription {
+      padding-left: 3rem;
+      font-size: 14px;
+    }
+    .clean {
+      font-size: 3rem;
+      margin-top: 0.1rem;
+      align-content: flex-end;
+      margin-left: 48rem;
+    }
+  }
+  .todoitem:first-child {
+    padding-top: 4.5rem;
+  }
+  .listtitle {
+    text-align: left;
+    padding: 1rem 0;
+    padding-bottom: 2rem;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(50, 50, 50);
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+}

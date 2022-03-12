@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import "./App.scss";
+import Input from "./components/Input";
+import ShowList from "./components/ShowList";
+
+type todoItemType = {
+  discription: string,
+  done: true | false 
+}
+type todolistType = todoItemType[];
 
 function App() {
+  const [todolist, setTodolist] = React.useState<todolistType | null>(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>AXing's TodoList</h2>
+      <Input></Input>
+      <ShowList></ShowList>
     </div>
   );
 }
