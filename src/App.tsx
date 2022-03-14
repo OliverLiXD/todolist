@@ -11,15 +11,25 @@ type todoItemType = {
 type todolistType = todoItemType[];
 
 function App() {
-
   const [todolist, setTodolist] = React.useState<todolistType | null>(null);
 
+  React.useEffect(() => {
+    if(localStorage.getItem("todolist") !== null) {
+      const data: todolistType = JSON.parse((localStorage.getItem("todolist") as string));
+      setTodolist(() => {
+        return data;
+      })
+    }
+  },[])
+  function storetodolistType(todolist: todolistType): void {
+    localStorage.setItem('todolist', JSON.stringify(todolist));
+  }
   function addTodoItem(e: React.KeyboardEvent<HTMLInputElement>): void {
     if(e.code === "Enter"){
       const res = (e.target as HTMLInputElement).value;
       setTodolist((preState): todolistType => {
         if( preState !== null) {
-          return [
+          const newTodolist: todolistType = [
             ...preState,
             {
               discription: res,
@@ -27,14 +37,18 @@ function App() {
               id: Date.now() + ""
             }
           ]
+          storetodolistType(newTodolist);
+          return newTodolist;
         }
-        return [
+        const newTodolist: todolistType = [
           {
             discription: res,
             done: false,
             id: Date.now() + ""
           }
         ]
+        storetodolistType(newTodolist);
+        return newTodolist;
       })
     }
   }
@@ -57,14 +71,16 @@ function App() {
         })
         changed.done = !changed.done;
         console.log(changed);
-        return [
+        const newTodolist: todolistType = [
           ...res,
           {
             discription: changed.discription,
             done: !changed.done,
             id: changed.id
           }
-        ] as todolistType;
+        ];
+        storetodolistType(newTodolist);
+        return newTodolist;
       }
 
       return null;
@@ -74,11 +90,11 @@ function App() {
   function deleteTodoItem(id: string): void {
     setTodolist((preState) => {
       if(preState !== null) {
-        const res = preState.filter((item) => {
+        const newTodolist: todolistType = preState.filter((item) => {
           return item.id !== id;
         })
-  
-        return res;
+        storetodolistType(newTodolist);
+        return newTodolist;
       }
       return null;
     })

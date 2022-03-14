@@ -33,14 +33,14 @@ const ShowList = ({ todolist, changeTodoItem, deleteTodoItem }: ShowListProps) =
             }) : (
               <li className="todoitem">
                 {/* <input type="checkbox" className="checkbox" onClick={changeTodoItem}/> */}
-                <span className="discription">have no comtent</span>
+                <span className="discription">Have no comtent</span>
                 {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
               </li>
             )
               :
             <li className="todoitem">
               {/* <input type="checkbox" className="checkbox" onClick={changeTodoItem}/> */}
-              <span className="discription">have no comtent</span>
+              <span className="discription">Have no comtent</span>
               {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
             </li>
           }
@@ -62,14 +62,14 @@ const ShowList = ({ todolist, changeTodoItem, deleteTodoItem }: ShowListProps) =
             }) : (
               <li className="todoitem">
                 {/* <input type="checkbox" className="checkbox" onClick={changeTodoItem}/> */}
-                <span className="discription">have no comtent</span>
+                <span className="discription">Have no comtent</span>
                 {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
               </li>
             )
               :
             <li className="todoitem">
               {/* <input type="checkbox" className="checkbox" onClick={changeTodoItem}/> */}
-              <span className="discription">have no comtent</span>
+              <span className="discription">Have no comtent</span>
               {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
             </li>
           }
