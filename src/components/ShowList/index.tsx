@@ -20,8 +20,7 @@ const ShowList = ({ todolist, changeTodoItem, deleteTodoItem }: ShowListProps) =
       <div className="unfinish">
         <div className="listtitle">To Do</div>
         <ul>
-          { todolist ? 
-            todolist.filter((item) => {return !item.done}).length > 0 ?
+          { todolist && todolist.filter((item) => {return !item.done}).length > 0 ?
             todolist.filter((item) => {return !item.done}).map((item) => {
               return (
                 <li className="todoitem" key={item.id}>
@@ -37,20 +36,13 @@ const ShowList = ({ todolist, changeTodoItem, deleteTodoItem }: ShowListProps) =
                 {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
               </li>
             )
-              :
-            <li className="todoitem">
-              {/* <input type="checkbox" className="checkbox" onClick={changeTodoItem}/> */}
-              <span className="discription">Have no comtent</span>
-              {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
-            </li>
           }
         </ul>
       </div>
       <div className="finished">
       <div className="listtitle">Completed</div>
         <ul>
-          { todolist ? 
-            todolist.filter((item) => {return item.done}).length > 0 ?
+          { todolist && todolist.filter((item) => {return item.done}).length > 0 ? 
             todolist.filter((item) => {return item.done}).map((item) => {
               return (
                 <li className="todoitem" key={item.id}>
@@ -66,12 +58,6 @@ const ShowList = ({ todolist, changeTodoItem, deleteTodoItem }: ShowListProps) =
                 {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
               </li>
             )
-              :
-            <li className="todoitem">
-              {/* <input type="checkbox" className="checkbox" onClick={changeTodoItem}/> */}
-              <span className="discription">Have no comtent</span>
-              {/* <i className="iconfont clean" onClick={deleteTodoItem}>&#xe8d1;</i> */}
-            </li>
           }
         </ul>
       </div>
